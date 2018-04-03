@@ -1,0 +1,8 @@
+include ../modules/post.jade
+
+section.center
+  form.center__top
+    input(type="text", placeholder="Message").center__top__input
+    button.center__top__btn ico
+  .center__content
+    +post('../assets/img/avatar.png', 'Name LastName', ' Lorem ipsum dolor sit amet, consectetur.')
