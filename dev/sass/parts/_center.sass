@@ -2,22 +2,23 @@
   width: 585px
   height: 700px
   margin: auto
-  border: solid 1px #ccc
+  @include borderRadius(5px)
   &__top
-    padding: 20px
+    padding: 23px
     position: relative
     width: 545px
     display: flex
     height: 30px
-    border-bottom: solid 1px #ccc
+    border-bottom: solid 1px #e0e0e0
     &__input
       width: 100%
-      border: solid 1px #ccc
+      @include borderRadius(5px)
       &::placeholder
-        padding-left: 10px
+        padding-left: 12px
+        color: #9da9b0
     &__btn
       position: absolute
       right: 20px
       height: inherit
       background-color: #fff
-      border: solid 1px #ccc
+      @include borderRadius(0 5px 5px 0)
