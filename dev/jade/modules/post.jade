@@ -1,5 +1,8 @@
-mixin post(avatar, name, desc)
+mixin post(src, alt, name, time, desc)
   .center__content__post
-    img.center__content__avatar(src="../assets/img/avatar.png", alt="Avatar")= avatar
-    h1.center__content__name= name
-    p.center__content__desc= desc
+    .center__content__avatar-wrapper
+      img.center__content__avatar(src=src, alt=alt)
+    .center__content__info
+      h1.center__content__name= name
+      time.center__content__time= time
+      p.center__content__desc= desc
