@@ -1,6 +1,6 @@
 .center
   width: 585px
-  height: 700px
+  min-height: 700px
   margin: auto
   font-family: Tahoma
   color: #a2b3c3
@@ -11,7 +11,6 @@
     width: 545px
     display: flex
     height: 30px
-    border-bottom: solid 1px #e0e0e0
     &__input
       width: 100%
       @include borderRadius(5px)
@@ -25,9 +24,16 @@
       background-color: #fff
       @include borderRadius(0 5px 5px 0)
   &__content
+    display: flex
+    flex-direction: column
+    &__gallery
+      margin-bottom: 4px
+      &:nth-child(odd)
+        margin-right: 7px
     &__post
       padding: 23px
       display: flex
+      border-top: solid 1px #e0e0e0
     &__avatar
         &-wrapper
           margin-right: 15px

@@ -1,4 +1,7 @@
-mixin post(src, alt, name, time, desc)
+mixin img(gallerySrc, galleryAlt)
+  img.center__content__gallery(src=gallerySrc, alt=galleryAlt)
+
+mixin post(src, alt, name, time, desc, hidden)
   .center__content__post
     .center__content__avatar-wrapper
       img.center__content__avatar(src=src, alt=alt)
@@ -6,3 +9,10 @@ mixin post(src, alt, name, time, desc)
       h1.center__content__name= name
       time.center__content__time= time
       p.center__content__desc= desc
+        article(class="center__content__gallery-wrapper", hidden=hidden)
+          +img("assets/img/photo1.png", "Gallery")
+          +img("assets/img/photo2.png", "Gallery")
+          +img("assets/img/photo3.png", "Gallery")
+          +img("assets/img/photo4.png", "Gallery")
+
+mixin avatar
