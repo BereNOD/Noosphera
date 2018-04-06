@@ -1,7 +1,7 @@
-mixin img(gallerySrc, galleryAlt)
-  img.center__content__gallery(src=gallerySrc, alt=galleryAlt)
-
-mixin post(src, alt, name, time, desc, hidden)
+mixin img(imgSrc, imgAlt, width, height)
+  img.center__content__gallery(src=imgSrc, alt=imgAlt, width=width, height=height)
+    
+mixin post(src, alt, name, time, desc, hiddenGallery, hiddenImg, hiddenComment)
   .center__content__post
     .center__content__avatar-wrapper
       img.center__content__avatar(src=src, alt=alt)
@@ -9,10 +9,21 @@ mixin post(src, alt, name, time, desc, hidden)
       h1.center__content__name= name
       time.center__content__time= time
       p.center__content__desc= desc
-        article(class="center__content__gallery-wrapper", hidden=hidden)
-          +img("assets/img/photo1.png", "Gallery")
-          +img("assets/img/photo2.png", "Gallery")
-          +img("assets/img/photo3.png", "Gallery")
-          +img("assets/img/photo4.png", "Gallery")
-
-mixin avatar
+      article(class="center__content__gallery-wrapper", hidden=hiddenGallery)
+        +img("assets/img/photo1.png", "Gallery")
+        +img("assets/img/photo2.png", "Gallery")
+        +img("assets/img/photo3.png", "Gallery")
+        +img("assets/img/photo4.png", "Gallery")
+      article(class="center__content__image-wrapper", hidden=hiddenImg)
+        +img("assets/img/photo5.png", "Gallery")
+      article(class="center__content__comment-wrapper", hidden=hiddenComment)
+        .center__content__avatar-wrapper
+          +img("assets/img/user2.png", "User Logo", "41px", "40px")
+        .center__content__info
+          h1.center__content__comment__title Jacob Thornton
+          p.center__content__comment__desc.
+            Lorem ipsum dolor sit amet, consectetur adipisicing 
+            elit. Sed excepturi optio voluptatum repudiandae 
+            corporis eos eum consequatur quod, eligendi, itaque 
+            laborum quidem nostrum similique, consequuntur. 
+            Accusamus ut ratione quam ullam.
